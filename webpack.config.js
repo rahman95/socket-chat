@@ -1,4 +1,4 @@
-const path = require('path')
+const path = require('path');
 
 module.exports = {
   entry: './src/client.js',
@@ -6,4 +6,4 @@ module.exports = {
     path: path.resolve(__dirname, 'bin'),
     filename: 'client.bundle.js'
   }
-}
+};
