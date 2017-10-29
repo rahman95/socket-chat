@@ -1,5 +1,7 @@
 $bootstrap-sass-asset-helper: true;
+$fa-font-path: "~font-awesome/fonts";
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
+@import '~font-awesome/scss/font-awesome.scss';
 
 html,
 body {
