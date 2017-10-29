@@ -1,7 +1,8 @@
 import 'jquery';
 import 'bootstrap';
+import io from 'socket.io-client';
 
-var socket = io.connect('http://localhost:8080');
+const socket = io('http://localhost:8080');
 socket.on('connected', function (data) {
   console.log(data);
 });
