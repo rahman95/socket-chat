@@ -10,9 +10,20 @@ socket.on('connected', function (data) {
   console.log(data);
 });
 
-$('#logIn').click(function(){
+$(document).on('click', '#logIn', function(){
   var url = '/login';
   $('#modal').find('.modal-content').empty();
   $('#modal').modal('show').find('.modal-content').html(loadingHtml);
   $('#modal').modal('show').find('.modal-content').load(url);
 });
+
+$(document).on('click', '#submitLogin', function(){
+  var form = $('#loginForm');
+  var userName = form.find('#userName').val();
+  if(!userName.length > 0){
+    $(form).find('.form-control').addClass('has-error');
+    return;
+  }
+  //TODO: Check server if name is available?
+});
+
