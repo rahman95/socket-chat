@@ -1,0 +1,65 @@
+$bootstrap-sass-asset-helper: true;
+@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+
+html,
+body {
+   font-family: 'Roboto Condensed', sans-serif;
+   margin: 0px;
+   body: 0px;
+   background: #333;
+}
+.title{
+  color: #fff;
+  a {
+   color: white;
+   text-decoration:none;
+   font-style: italic;
+    &:hover{
+      color: #d3d3d3;
+    }
+  }
+}
+.center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+}
+.panel{
+  >.panel-heading{
+    padding:15px;
+    font-size: 1.5rem;
+  }
+  >.panel-body{
+    padding: 30px;
+	   .noPadding{
+			padding-left: 0px;
+		}
+  }
+  >.panel-footer{
+    padding:15px;
+    text-align: right;
+    border-top: 1px solid #e5e5e5;
+	height: 11rem;
+		> .noPadding{
+			padding-left: 0px;
+			&.button{
+				padding-right: 0px;
+			}
+		}
+  }
+}
+.row{
+	margin-bottom:10px;
+}
+.sendButton{
+	padding: 25px
+}
+.badge{
+	margin-left:5px;
+}
+#userName{
+	color: #adadad;
+	text-align: center;
+}

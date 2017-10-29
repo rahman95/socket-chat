@@ -2,9 +2,45 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <script src="bin/client.bundle.js" charset="utf-8"></script>
     </head>
     <body>
-        <script src="bin/client.bundle.js" charset="utf-8"></script>
-        <script src="/socket.io/socket.io.js"></script>
+        <div class='container center'>
+            <div class="panel panel-default">
+                <div class="panel-heading"> Messenger</div>
+                    <div class="panel-body"> 
+                        <div class='row'>
+                            <div class='alert alert-info'><i class="fa fa-info-circle" aria-hidden="true"></i> You need to log-in to chat online</div>
+                            <div class='col-sm-9 noPadding'>
+                                    <textarea rows="20" class="form-control" placeholder='Message history' readonly></textarea>
+                            </div>
+                            <div class='col-sm-3'>
+                                <div class='row'>
+                                    <label for='roomList'>Room List</label><span class="badge badge-success">5</span>
+                                    <textarea id='roomList' rows='5' class="form-control" placeholder='Room List' readonly></textarea>
+                                </div>
+                                <div class='row'>
+                                    <label for='userList'>User List</label><span class="badge badge-success">5</span>
+                                    <textarea id='userList' rows='5' class="form-control" placeholder='User List' readonly></textarea>
+                                </div>
+                                <div class='row'>
+                                    <p><i class="fa fa-user" aria-hidden="true"></i> Logged in as </p>
+                                    <p id='userName'>N/A</p>
+                                    <button class='btn btn-block btn-success'>Log-in</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer"> 
+                        <div class='col-sm-9 noPadding'>
+                            <textarea rows="3" class="form-control" placeholder='Enter Message' readonly></textarea>
+                        </div>
+                        <div class='col-sm-3 noPadding button'>
+                            <button type="button" class="btn btn-block btn-success sendButton disabled">Send</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
