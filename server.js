@@ -7,7 +7,11 @@ app.use(express.static(__dirname));
 server.listen(8080);
 
 app.get('/', function (req, res) {
-  res.sendFile(__dirname + '/index.html');
+  res.sendFile(__dirname + '/views/index.html');
+});
+
+app.get('/login', function (req, res) {
+  res.sendFile(__dirname + '/views/login.html');
 });
 
 io.on('connection', function (socket) {

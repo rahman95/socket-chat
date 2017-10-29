@@ -26,6 +26,24 @@ body {
   transform: translate(-50%, -50%);
   width: 50%;
 }
+.modal {
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) { 
+  .modal:before {
+    display: inline-block;
+    vertical-align: middle;
+    content: " ";
+    height: 100%;
+  }
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
 .panel{
   >.panel-heading{
     padding:15px;
@@ -59,7 +77,7 @@ body {
 .badge{
 	margin-left:5px;
 }
-#userName{
+#loggedinUser{
 	color: #adadad;
 	text-align: center;
 }
