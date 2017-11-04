@@ -24,6 +24,28 @@ $(document).on('click', '#submitLogin', function(){
     $(form).find('.form-control').addClass('has-error');
     return;
   }
-  //TODO: Check server if name is available?
+  socket.emit('checkLogin', userName);
+  socket.on('userConnected', function(data){
+    
+    if(data.success){
+      //successfully logged in
+      $('#modal').modal('hide');
+      activateInputs(data.userName);
+    }else{
+      //an error occured
+      $('#messageLog').html(data.error).removeClass('alert-info').addClass('alert-danger');
+    }
+  });
 });
+
+function activateInputs(userName){
+  $('#chatHistory').removeAttr('disabled');
+  $('#roomList').removeAttr('disabled');
+  $('#userList').removeAttr('disabled');
+  $('#messageBox').removeAttr('disabled');
+  $('.sendButton').removeAttr('disabled');
+  $('#logIn').html('Log-off').removeClass('btn-success').addClass('btn-danger');
+  $('#loggedinUser').html(userName);
+  $('#loginAlert').hide();
+}
 

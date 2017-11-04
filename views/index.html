@@ -10,18 +10,18 @@
                 <div class="panel-heading"> Messenger</div>
                     <div class="panel-body"> 
                         <div class='row'>
-                            <div class='alert alert-info'><i class="fa fa-info-circle" aria-hidden="true"></i> You need to log-in to chat online</div>
+                            <div id='loginAlert' class='alert alert-info'><i class="fa fa-info-circle" aria-hidden="true"></i> You need to log-in to chat online</div>
                             <div class='col-sm-9 noPadding'>
-                                    <textarea rows="20" class="form-control" placeholder='Message history' readonly></textarea>
+                                    <textarea id='chatHistory' rows="20" class="form-control" placeholder='Message history' disabled></textarea>
                             </div>
                             <div class='col-sm-3'>
                                 <div class='row'>
                                     <label for='roomList'>Room List</label><span class="badge badge-success">5</span>
-                                    <textarea id='roomList' rows='5' class="form-control" placeholder='Room List' readonly></textarea>
+                                    <textarea id='roomList' rows='5' class="form-control" placeholder='Room List' disabled></textarea>
                                 </div>
                                 <div class='row'>
                                     <label for='userList'>User List</label><span class="badge badge-success">5</span>
-                                    <textarea id='userList' rows='5' class="form-control" placeholder='User List' readonly></textarea>
+                                    <textarea id='userList' rows='5' class="form-control" placeholder='User List' disabled></textarea>
                                 </div>
                                 <div class='row'>
                                     <p><i class="fa fa-user" aria-hidden="true"></i> Logged in as </p>
@@ -33,7 +33,7 @@
                     </div>
                     <div class="panel-footer"> 
                         <div class='col-sm-9 noPadding'>
-                            <textarea rows="3" class="form-control" placeholder='Enter Message' readonly></textarea>
+                            <textarea id='messageBox' rows="3" class="form-control" placeholder='Enter Message' disabled></textarea>
                         </div>
                         <div class='col-sm-3 noPadding button'>
                             <button type="button" class="btn btn-block btn-success sendButton disabled">Send</button>
