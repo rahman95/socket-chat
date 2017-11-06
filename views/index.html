@@ -12,7 +12,7 @@
                         <div class='row'>
                             <div id='loginAlert' class='alert alert-info'><i class="fa fa-info-circle" aria-hidden="true"></i> You need to log-in to chat online</div>
                             <div class='col-sm-9 noPadding'>
-                                    <textarea id='chatHistory' rows="20" class="form-control" placeholder='Message history' disabled></textarea>
+                                    <div id='chatHistory' class="form-control disabled" disableds></div>
                             </div>
                             <div class='col-sm-3'>
                                 <div class='row'>
@@ -35,7 +35,7 @@
                             <textarea id='messageBox' rows="3" class="form-control" placeholder='Enter Message' disabled></textarea>
                         </div>
                         <div class='col-sm-3 noPadding button'>
-                            <button type="button" class="btn btn-block btn-success sendButton disabled">Send</button>
+                            <button id='sendButton' type="button" class="btn btn-block btn-success sendButton disabled">Send</button>
                         </div>
                     </div>
                 </div>

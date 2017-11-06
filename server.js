@@ -45,11 +45,12 @@ io.on('connection', function (socket) {
     }
   });
 
-  //On Receive
-
   //On Send
-  socket.on('send', function (data) {
-    console.log(data);
+  socket.on('sendMessage', function (data) {
+    socket.broadcast.emit('BroadcastMessage', {
+      user: data.user,
+      message: data.message
+    });
   });
 });
 

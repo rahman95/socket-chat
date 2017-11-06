@@ -83,3 +83,10 @@ body {
 	color: #adadad;
 	text-align: center;
 }
+#chatHistory{
+  height: 40rem;
+  &.disabled{
+    background-color:#eeeeee;
+    opacity: 1;
+  }
+}
