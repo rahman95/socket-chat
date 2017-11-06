@@ -25,19 +25,19 @@ io.on('connection', function (socket) {
 
   //On Login name check
   socket.on('checkLogin', function (user) {
-    if(!checkUserName){
-      console.log('new user joined');
+    if(!existsUserName()){
       users.push({'name': user});
       socket.emit('userConnected', {
         success: true,
         userName: user,
+        userCount: Object.keys(users).length,
+        roomCount: Object.keys(rooms).length
       });
       socket.broadcast.emit('userJoined', {
         userName: user,
         userCount: Object.keys(users).length
       });
     }else{
-      console.log('username already exists');
       socket.emit('userConnected', {
         success: false,
         error: 'Name ' + user + ' already exists, please try another.',
@@ -53,15 +53,13 @@ io.on('connection', function (socket) {
   });
 });
 
-function checkUserName(userName)
+function existsUserName(userName)
 {
   var nameExists = false;
-
   for (index in users) {
     if(users[index].name == userName){
       nameExists = true;
     }
   }
-
   return nameExists;
 }

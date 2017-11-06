@@ -10,6 +10,10 @@ socket.on('connected', function (data) {
   console.log(data);
 });
 
+socket.on('userJoined', function (data) {
+  updateUserCount(data.userCount);
+});
+
 $(document).on('click', '#logIn', function(){
   var url = '/login';
   $('#modal').find('.modal-content').empty();
@@ -31,6 +35,8 @@ $(document).on('click', '#submitLogin', function(){
       //successfully logged in
       $('#modal').modal('hide');
       activateInputs(data.userName);
+      updateUserCount(data.userCount);
+      updateRoomCount(data.roomCount);
     }else{
       //an error occured
       $('#messageLog').html(data.error).removeClass('alert-info').addClass('alert-danger');
@@ -41,11 +47,18 @@ $(document).on('click', '#submitLogin', function(){
 function activateInputs(userName){
   $('#chatHistory').removeAttr('disabled');
   $('#roomList').removeAttr('disabled');
-  $('#userList').removeAttr('disabled');
   $('#messageBox').removeAttr('disabled');
   $('.sendButton').removeAttr('disabled');
   $('#logIn').html('Log-off').removeClass('btn-success').addClass('btn-danger');
   $('#loggedinUser').html(userName);
   $('#loginAlert').hide();
+}
+
+function updateRoomCount(count){
+  $('#roomCount').html(count);
+}
+
+function updateUserCount(count){
+  $('#userCount').html(count);
 }
 
