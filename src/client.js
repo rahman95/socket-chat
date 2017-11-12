@@ -16,7 +16,7 @@ socket.on('userJoined', function (data) {
 });
 
 socket.on('BroadcastMessage', function (data) {
-  addMessage(data.user, data.message);
+  addMessage(data.user, data.message, 'to');
 });
 
 $(document).on('click', '#logIn', function(){
@@ -56,7 +56,7 @@ $(document).on('click', '#sendButton', function(){
   if(!message.length > 0){
     return;
   }
-  addMessage(userName, message);
+  addMessage(userName, message, 'from');
   socket.emit('sendMessage', {
     user: userName,
     message: message
@@ -64,11 +64,12 @@ $(document).on('click', '#sendButton', function(){
   $('#messageBox').val('');
 });
 
-function addMessage(user, message){
+function addMessage(user, message, origin){
   var chatHistory = $('#chatHistory');
   var newMessage = document.createElement('div');
   newMessage.classList.add('message');
-  newMessage.innerHTML= user + ' says: ' + message
+  newMessage.classList.add(origin);
+  newMessage.innerHTML= message;
   chatHistory.append(newMessage);
   chatHistory.scrollTop = chatHistory.scrollHeight;
 }
