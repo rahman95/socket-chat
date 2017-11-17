@@ -71,7 +71,7 @@ function addMessage(user, message, origin){
   newMessage.classList.add(origin);
   newMessage.innerHTML= message;
   chatHistory.append(newMessage);
-  chatHistory.scrollTop = chatHistory.scrollHeight;
+  chatHistory.scrollTop(chatHistory[0].scrollHeight);
 }
 
 function activateInputs(userName){

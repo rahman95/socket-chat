@@ -85,10 +85,7 @@ body {
 }
 #chatHistory{
   height: 40rem;
-  &.disabled{
-    background-color:#eeeeee;
-    opacity: 1;
-  }
+  overflow-y: scroll;
 }
 
 .message {
